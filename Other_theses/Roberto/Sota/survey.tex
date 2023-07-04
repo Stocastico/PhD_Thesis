@@ -1,0 +1,27 @@
+%Introduction
+%\begin{savequote}[50mm]
+%If our brains were simple enough for us to understand them, we'd be so simple that we couldn't.
+%\qauthor{Ian Stewart }%The Collapse of Chaos: Discovering Simplicity in a Complex World
+%\end{savequote}
+%[Technologies for interoperable multi-device services]
+\chapter{Related Work}
+\chaptermark{Related Work}
+\label{chap:sota}
+
+\section{Context}
+
+As explained in Chapter \ref{chap:introduction}, new technologies and paradigms, such as SDN and NFV, are included in the 5G ecosystem and are also considered as key pillars of network generations beyond 5G.
+The objective of NFV is to virtualize all the building blocks that constitute the network infrastructure (Core, Edge and Access Networks) over the resources available at the data centers.
+The virtualization technologies, widely proven in cloud platforms, allow to easily scale or migrate a service from a location to another depending on the demand of the service and network status at any moment.
+SDN enables a centralized network control and the management of forwarding rules between network functions running over data centers. To achieve it, the separation between control and data planes allows the control plane to instruct the data plane to process and forward data packets according to specified forwarding rules. Therefore, it creates an abstraction layer for the network administrator who no longer needs to manually configure each node.
+The combination of SDN and NFV enables to operate and manage VNFs by software running on top of general-purpose hardware. VNFs instances run on top of NFV Infrastructure (NFVI), where the connection is provided through SDN equipment and forwarding rules.
+NFV and SDN are also applied at the Access Network, where MEC consists in an NFV-compliant data center. MEC represents a new architectural paradigm to provide cloud capabilities closer to the clients, as to allow the deployment of edge services to empower heterogeneous vertical applications. In addition to other cloud infrastructure, it provisions a specific API to access RNI that can be exploited by VNFs instances running at MEC host.
+
+In a video streaming context, VNFs are designed and employed to deploy an end-to-end media system to empower the generation, the delivery and the consumption of video content in an optimized and cost-effective manner. VNFs implementations include functions that can operate on different nodes on the network. VNFs can be used to encode and package the media content on the origin server or to serve manifests when employing MPEG-DASH or HLS on the media server. Additionally, virtual CDNs and MEC services can be deployed as VNFs to enhance the delivery of the media content.
+
+The use of VNFs enables flexible operations whose benefits are threefold. First, VNF-based networks monitor objective operational parameters, such as throughput or latency, representative for QoS of the streaming dataflows, which have a direct influence on user satisfaction.
+However, QoS metrics do not perfectly map on user experience, as user perceived quality is highly subjective. Additionally, QoE needs to be considered to compile subjective evaluation elements, including rewards for playback quality and smoothness, and penalties for image freezes and unstable or low quality.
+Secondly, the CP can monitor network traffic and allocate resources according to its business rules. Thus, it can adjust the balance between network resources and business costs.
+Last, as the volume, complexity and real-time nature of streaming traffic has an evident impact on energy consumption of the network and devices managing the content, an optimized streaming delivery through VNFs should also consider the energy efficiency.
+
+Section \ref{chap:IEEECOMST2021} includes a survey focused on the application of VNFs for media streaming services. The survey provides the state-of-the-art of the involved technologies and solutions, as well as providing an outlook on pending challenges future research directions.

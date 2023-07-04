@@ -1,0 +1,381 @@
+% !TeX spellcheck = en_US
+% ----------------------------------------------------------------------
+%              Latex PhD template for the University of Deusto
+% ----------------------------------------------------------------------
+%$Id: dissertation.tex 87 2013-09-18 11:46:01Z iolaizola $
+
+%: Style file for Latex
+% Most style definitions are in the external file PhDthesisPSnPDF.
+% In this template package, it can be found in ./Latex/Classes/
+\documentclass[twoside,12pt,onecolumn]{Latex/Classes/PhDthesisPSnPDF}
+\usepackage[a4paper,inner=3.5cm,outer=2.5cm]{geometry}
+
+%\hyphenation{Martin}
+
+
+%: ----------------------------------------------------------------------
+%:                  TITLE PAGE: name, degree,..
+% ----------------------------------------------------------------------
+% below is to generate the title page with crest and author name
+
+% Title of the dissertation
+\title{\myTitle}
+
+
+% ----------------------------------------------------------------------
+% This section below defines front covert (external and internal)
+% Shield logo
+\crest{\includegraphics[width=0.7\textwidth]{ehu_logo}}
+% Full logo
+%\crest{\includegraphics[width=6cm]{UDeusto}}
+\university{Department of Informatics}
+\degree{by: \\}
+\author{Stefano Masneri}
+\collegeordept{}
+\textadvisor{Supervised by:\\ }
+\advisor{Dra. Ana Arruarte Lasa}
+\advisortwo{\& \\ Dr. Mikel Zorrilla Berasategui}
+\textsignaturecandidate{}
+\textsignatureadvisor{}
+\cityofbirth{Donostia -- San Sebasti\'{a}n}
+%\degreedate{\monthname \ \the\year}
+%\degreedate{XXXday XXth May, 2021}
+\degreedate{\today}
+
+
+% ----------------------------------------------------------------------
+       
+% turn of those nasty overfull and underfull hboxes
+\hbadness=10000
+\hfuzz=50pt
+
+%\usepackage[hyphenbreaks]{breakurl}
+%\usepackage[hyphens]{url}
+\PassOptionsToPackage{hyphens}{url}
+\usepackage{hyperref}
+\usepackage{url}
+
+%NEWCOMMANDS
+\newcommand{\Vicomtech}{Vicomtech\xspace}
+
+%NEWCOMMANDS ADDED (MIKEL)
+\newcolumntype{K}[1]{>{\centering\arraybackslash}p{#1}}
+
+%PACKAGES ADDED (MIKEL)
+\usepackage{enumitem}
+\usepackage{longtable,array}
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+\usepackage{algorithm}% http://ctan.org/pkg/algorithm
+\PassOptionsToPackage{noend}{algpseudocode}% comment out if want end's to show
+\usepackage{algpseudocode}% http://ctan.org/pkg/algorithmicx
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithms/
+% There is also a support site at:
+% http://algorithms.berlios.de/index.html
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/tex-archive/macros/latex/contrib/algorithmicx/
+
+
+% *** SUBFIGURE PACKAGES ***
+\usepackage{subfig}
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+\usepackage{pdfpages}
+\usepackage{setspace}
+\usepackage{color,soul}
+\usepackage{geometry}
+\usepackage{multirow}
+\usepackage{makecell}
+\usepackage{rotating}
+\captionsetup[table]{aboveskip=2pt}
+\captionsetup[table]{belowskip=2pt}
+
+%\usepackage{layout}
+
+%\PassOptionsToPackage{intoc}{nomencl}
+\usepackage{nomencl}
+%\renewcommand{\nomname}{Glossary}
+\makenomenclature
+
+\AtBeginDocument{% optionally set colors to your liking
+	\hypersetup{
+		urlcolor=black,
+		citecolor=black,
+		linkcolor=black,
+	}%
+}
+
+
+%CONDITIONALS
+\newif\ifattachpapers
+\attachpaperstrue
+
+%: --------------------------------------------------------------
+%:                  FRONT MATTER: dedications, abstract,..
+% --------------------------------------------------------------
+
+\begin{document}
+
+%\setlength{\marginparwidth}{0pt}
+
+\selectlanguage{english}
+
+% sets line spacing
+\renewcommand\baselinestretch{1.2}
+\baselineskip=18pt plus1pt
+
+% Watermark
+%\watermark{DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT	DRAFT}
+
+
+%\layout
+%: ----------------------- generate cover page ------------------------
+
+\maketitle  % command to print the title page with above variables
+
+% Title back
+\include{frontmatter/title_back}
+
+
+
+
+
+%: ----------------------- abstract ------------------------
+
+% Your institution may have specific regulations if you need an abstract and where it is to be placed in the document. The default here is just after title.
+
+
+% The original template provides and abstractseparate environment, if your institution requires them to be separate. I think it's easier to print the abstract from the complete thesis by restricting printing to the relevant page.
+% \begin{abstractseparate}
+%   \input{Abstract/abstract}
+% \end{abstractseparate}
+
+
+%: ----------------------- tie in front matter ------------------------
+
+% The frontmatter text starts here
+\frontmatter
+
+\include{frontmatter/dedication}
+\include{frontmatter/abstract}
+\include{frontmatter/acknowledgement}
+
+% As abstract contains various languages we set the main language again
+\selectlanguage{english}
+
+
+%: ----------------------- contents ------------------------
+
+\setcounter{secnumdepth}{5} % organisational level that receives a numbers
+\setcounter{tocdepth}{1}    % print table of contents for level 3
+
+
+%%You can also add extra lines to the ToC or to force extra unnumbered section headings to be included. For example, if you wanted to add an entry called Preface, and you didn't want the Preface to be numbered, you'd use these commands:
+%\ subsection*{Preface}
+%\addcontentsline{toc}{subsection}{Preface} 
+
+\tableofcontents            % print the table of contents
+% levels are: 0 - chapter, 1 - section, 2 - subsection, 3 - subsection
+
+%: ----------------------- list of figures/tables ------------------------
+
+\listoffigures	% print list of figures
+\listoftables  % print list of tables
+
+
+
+%: --------------------------------------------------------------
+%:                  MAIN DOCUMENT SECTION
+% --------------------------------------------------------------
+
+% the main text starts here with the introduction, 1st chapter,...
+\mainmatter
+
+%\renewcommand{\chaptername}{} % uncomment to print only "1" not "Chapter 1"
+\pagestyle{fancy}
+
+%: ----------------------- subdocuments ------------------------
+
+% Parts of the thesis are included below. Rename the files as required.
+% But take care that the paths match. You can also change the order of appearance by moving the include commands.
+
+%%: ----------------------- Content ------------------------
+% introduction
+\part{Introduction}
+\label{sec:Part1}
+\include{Content/index}
+%
+%%: ----------------------- Related Work ------------------------
+% SotA
+\part{State of the Art}
+\label{sec:Part2}
+\include{Sota/index}
+%
+%%: ------------------- Research Results ----------------------
+\part{Research Results}
+\label{sec:Part3}
+\include{ResearchResults/index}
+%
+%
+%%: ------------------- Conclusions ----------------------
+\part{Conclusions}
+\label{sec:Part4}
+\include{Conclusions/index}
+
+% --------------------------------------------------------------
+%:                  BACK MATTER: appendices, refs,..
+% --------------------------------------------------------------
+
+% the back matter: appendix and references close the thesis
+\backmatter
+
+
+
+%: ----------------------- appendix ------------------------
+\appendix
+\part{Appendix}
+\label{sec:appendix}
+\include{Appendix/index}
+
+%: ----------------------- glossary ------------------------
+%\chapter{Glossary}
+%\label{sec:glossary} % target name for links to glossary
+% Tie in external source file for definitions: /0_frontmatter/glossary.tex
+% Glossary entries can also be defined in the main text. See glossary.tex
+%\include{frontmatter/glossary}
+
+%\begin{multicols}{2} % \begin{multicols}{#columns}[header text][space]
+%\begin{footnotesize} % scriptsize(7) < footnotesize(8) < small (9) < normal (10)
+
+%\printnomenclature[1.5cm] % [] = distance between entry and description
+
+%\printnomenclature % [] = distance between entry and description
+
+
+%\end{footnotesize}
+%\end{multicols}
+
+%\addcontentsline{toc}{chapter}{\nomname}
+
+%: ----------------------- bibliography ------------------------
+
+\part{Bibliography}
+%\section{Bibliography}
+\label{sec:bibliography}
+%\bibliographystyle{myalpha} % Defines the bibliography style
+%\bibliographystyle{abbrv}
+\bibliographystyle{unsrt}
+%\begingroup
+%\renewcommand{\chapter}[2]{}%
+%\renewcommand{\addcontentsline}[3]{}% Make \addcontentsline a no-op
+\bibliography{backmatter/references}
+%\endgroup
+
+% The section below defines how references are listed and formatted
+% The default below is 2 columns, small font, complete author names.
+% Entries are also linked back to the page number in the text and to external URL if provided in the BibTex file.
+
+
+% Original version:
+
+% PhDbiblio-url2 = names small caps, title bold & hyperlinked, link to page 
+%\begin{multicols}{2} % \begin{multicols}{ # columns}[ header text][ space]
+%\begin{tiny} % tiny(5) < scriptsize(7) < footnotesize(8) < small (9)
+%
+%\bibliographystyle{Latex/Classes/PhDbiblio-url2} % Title is link if provided
+%\renewcommand{\bibname}{References} % changes the header; default: Bibliography
+%
+%\bibliography{9_backmatter/references} % adjust this to fit your BibTex file
+%
+%\end{tiny}
+%\end{multicols}
+
+
+
+% Show all bibliography entries
+%\nocite*
+
+
+
+% If we want bibliography backreference, use unsrt first and the desidered one after
+
+%\bibliographystyle{unsrt} % Defines the bibliography style
+
+%\bibliographystyle{alpha} % Defines the bibliography style
+%\bibliographystyle{myalpha} % Defines the bibliography style
+
+
+%\bibliographystyle{apa-good} % Defines the bibliography style
+%\bibliographystyle{natbib} % Defines the bibliography style
+
+%\bibliographystyle{plainurl}
+
+%\renewcommand{\bibname}{References} % changes the header; default: Bibliography
+
+%To include the references/works cited/bibliography in your Table of Contents, right before the bibliography command, use the command
+%\addcontentsline{toc}{section}{References}
+%
+
+%\bibliography{backmatter/references,backmatter/eo_review} % adjust this to fit your BibTex file
+%\bibliography{backmatter/references}
+
+% --------------------------------------------------------------
+% Various bibliography styles exit. Replace above style as desired.
+
+% in-text refs: (1) (1; 2)
+% ref list: alphabetical; author(s) in small caps; initials last name; page(s)
+%\bibliographystyle{Latex/Classes/PhDbiblio-case} % title forced lower case
+%\bibliographystyle{Latex/Classes/PhDbiblio-bold} % title as in bibtex but bold
+%\bibliographystyle{Latex/Classes/PhDbiblio-url} % bold + www link if provided
+%\bibliographystyle{apalike}
+%\bibliographystyle{Latex/Classes/jmb} % calls style file jmb.bst
+% in-text refs: author (year) without brackets
+% ref list: alphabetical; author(s) in normal font; last name, initials; page(s)
+
+%\bibliographystyle{plainnat} % calls style file plainnat.bst
+% in-text refs: author (year) without brackets
+% (this works with package natbib)
+
+
+% --------------------------------------------------------------
+
+
+%: Declaration of originality
+%\include{9_backmatter/declaration}
+
+
+
+
+
+\end{document}

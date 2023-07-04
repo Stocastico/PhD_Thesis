@@ -1,0 +1,36 @@
+%Introduction
+%\begin{savequote}[50mm]
+%If our brains were simple enough for us to understand them, we'd be so simple that we couldn't.
+%\qauthor{Ian Stewart }%The Collapse of Chaos: Discovering Simplicity in a Complex World
+%\end{savequote}
+%[Two-way complementarity of computing capabilities]
+%\chapter{Two-way complementarity of computing capabilities in multi-device media services}
+\chapter{MEC-enabled content delivery}
+\chaptermark{MEC-enabled content delivery}
+\label{chap:MEC}
+
+\section{Context}
+
+MEC is a new network architecture concept included in the 5G ecosystem to boost the performance of network services. It enables computing capability close to the RAN such to run algorithms and/or services that empower specific applications. Moreover, RNI Service (RNIS) integrated into MEC platform allows to access RAN information or RNI, a set of objective metrics (QoS) concerning the status of the UE connected through radio interface. When considering video streaming, having only QoS metrics is not enough. It is useful to assess or estimate the QoE experienced by the users and take actions to improve their individual QoE and the fairness among them in the exploitation of network resources. Maximizing customer satisfaction through QoE-based networking is a crucial challenge for video streaming services. ETSI working documents also support the application of analytics at the MEC to optimize the video streaming traffic.
+
+Section \ref{chap:MTAP2020} proposes a MEC-enabled MPEG-DASH video streaming proxy that estimates the users' QoE according to ITU-T P.1203. It is derived from monitored QoS metrics in a dense client radio cell and the information acquired by accessing the MPEG-DASH manifest (MPD). It does not need an explicit out of band messaging from video players to MEC system. Thus, the implemented MEC proxy is independent of video servers and players. Knowledge of QoE can enable advanced solutions that realize the network/application symbiosis, as it provides the information to subsequently decide streaming qualities in a coordinated manner in a dense client cell. The major contributions of this paper can be summarized as follows:
+\begin{itemize}
+	\item A novel mechanism to estimate ITU-T P.1203 QoE scores from network dynamics at the cell and parameters parsed from MPEG-DASH MPD without an explicit out of band messaging from video players to MEC system. It aims to assess information of video representation bitrates, number of representation switches, number of stalling events and their duration.
+	\item An implementation of a MEC proxy, independent from video servers and players, to monitor and assess ITU-T P.1203 QoE scores for each local session.
+	\item The analysis of the accuracy of the proposed solution to assess the ITU-T P.1203 QoE of individual players in a Wi-Fi-based experimentation setup and a dense client cell. To this end, two scenarios with different levels of concurrency and congestion are performed.
+	%The first scenario has 10 players at a time, while in the second one the number of players is increased to 20.
+\end{itemize}
+Concerning stall assessment, the MEC proxy cannot detect all the stalls experienced by the player. In any case, the total duration of stalls tends to converge to the actual accumulated value experienced by the player. The MEC proxy cannot detect micro-stalls and tends to concentrate several of them into a macro-stall. This behavior is due to the sampling time to check for stalls (segment duration of 6 seconds). If two micro-stalls are experienced during the same segment, MEC proxy will conjecture that just one longer stall happened since it checks only at the end of each segment download.
+The results in terms of QoE scores obtained at the MEC are compared with the actual ones achieved at the player side. Mean Absolute Error (MAE) and Root Mean Square Error (RMSE) rates show that the scores obtained at the MEC tend to be like the ones at the player. It demonstrates the capability of the MEC Proxy to estimate ITU-T P.1203 QoE scores close to actual ones.
+
+In Section \ref{chap:BMSB2018}, information available at the MEC location is exploited to develop a MEC solution, called MEC4CDN, that allows two different operations. First, MEC4CDN caches popular MPEG-DASH segments at network edge to reduce CDN usage. To this end, it is able to identify recurrent requests. Second, it shields from identified or predicted CDN malfunction by switching the download of MPEG-DASH segments to an alternative CDN in order to ensure QoE rates. Thus, it enables a CDN dynamic selection based on live connectivity statistics. In both operations, the information of MPEG-DASH MPD is essential to know the available representations, as well as the location of the remote CDN servers. This paper comprises the following relevant contributions:
+\begin{itemize}
+	\item Local cache at the MEC of the identified contents to minimize the traffic between the CDN and the network edge. MEC4CDN decides to locally cache already served responses to serve near future requests and proactively cache the identified future segments in case of VOD streams.
+	\item Dynamic selection of the CDN based on live measurements in the context of a multi-CDN delivery. The player starts receiving the stream from a CDN server, that is favorable in terms of QoS connectivity metrics, and is dynamically switched to another one which provides better performance in case of CDN degradation or outage.
+	\item Evaluation by delivering MPEG-DASH streams in a dense client cell
+	%having 20 players
+	and comparing the two proposed strategies (local cache and dynamic CDN selection) with a legacy stream delivery.
+\end{itemize}
+Concerning local cache strategy, the results show that MEC4CDN lets the player experience lower latency since the segments are closer to it, then the throughput is higher. Therefore, the players tend to request higher representation bitrates which improve the user's QoE.
+When considering dynamic CDN selection strategy, legacy MPEG-DASH delivery does not let the player take actions when the principal CDN suffers performance degradation. The player has to reduce the representation bitrate in order to continue playing. On the contrary, when MEC4CDN comes into play, it switches player's connection to a healthy CDN such that the representation bitrate is kept to higher levels. Therefore, MEC4CDN is able to enforce the delivery by switching to an alternative CDN which better performs.
+To sum up, both strategies present advantages over a legacy MPEG-DASH delivery. When network issues are experienced, they allow to keep the QoE rates (CDN switching) or even improve them (local cache at the edge).

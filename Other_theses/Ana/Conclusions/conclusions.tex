@@ -1,0 +1,61 @@
+%Introduction
+%\begin{savequote}[50mm]
+%If our brains were simple enough for us to understand them, we'd be so simple that we couldn't.
+%\qauthor{Ian Stewart }%The Collapse of Chaos: Discovering Simplicity in a Complex World
+%\end{savequote}
+\chapter{Conclusions}
+\label{chap:conclusions}
+
+\section{Conclusions}
+This research work has demonstrated the feasibility to provide a methodology which provides as an outcome an adaptation model for the user interface of multi-device media services. Through a two-stage methodology based on obtaining a model from a previous experience, a general model has been formalised easily adaptable to many different use cases and scenarios and ready for any technological update. 
+
+On the first stage a large-scale pilot deployment of a hybrid broadcast-Internet multi-device service for a live TV programme has been designed and implemented. First some questions have been formulated regarding the mentioned large-scale pilot and then answers have been obtained based on the results of the pilot, which has been used by more than a thousand of users. This pilot has been useful to validate the Web-based distributed architecture for multi-device applications proposed in \cite{Zorrilla2015} and extract some valuable lessons and conclusions to improve several dimensions of COPE based services among which stand out:
+
+\begin{itemize}
+	\item The interest of broadcasters to provide innovative multi-device services within some constraints and as long as it does not imply complexity.
+	\item The need to improve the usability of multi-device User Interface, whose design is the key in guiding the user across all the connected devices.
+\end{itemize}
+
+In order to face these challenges and go a step further in the development of hybrid broadcast-Internet multi-device services for a TV show, an automatic adaptation model that takes into account several user interface elements, design factors and context information is needed. This would provide as an outcome a near-optimal multi-screen experience. Therefore, to make a leap towards the automatisation of the adaptation model, a second stage has been carried out in which the lessons learned from the previous deployment have been used to adjust the initial hypothesis and to define a methodology that allows to generate adaptation models general enough for every use case and technological update. In this second stage, first, a methodology has been defined with different steps to gather the needed information to identify the elements and design factors considered as relevant in the adaptation process of the multi-device user interface. With that information a formal model has been defined, including the characterisation of involved user interface elements, the adaptation process and a evaluation model. Then, implementation examples of the model have been developed in order to validate it in different terms. 
+
+Regarding the characterisation of the user interface elements, three different researches have been carried out, once for each identified element i.e. components, devices and layouts. 
+\begin{itemize}
+	\item Characterisation of the components: an analysis of the content of TV programmes has been done in order to see which contents they show and their relevance. For that, different broadcast emissions have been analysed taking into account different countries and programme types. The analysis has provided as a result a large list of different elements that have been classified into eight components types according to their common properties. This has been the typification method for the content of the service.
+	\item Characterisation of the devices: devices have been characterised through the information made available by the browser, more in detail, through the User Agent. A comparative empirical analysis has been done with three different approaches of Web-based device type detection which base their knowledge on different learning systems and statistical models. Therefore, the typification method for devices has been the use of classification algorithms.
+	\item Characterisation of layouts: layouts have been analysed in a slightly different way. First, a set of user tests has been carried out to identify the relevant parameters that suggest the use of a layout template or another. And then, the most representative layout templates have been chosen to implement a model based on the identified parameters. 
+\end{itemize}
+
+Regarding the adaptation process, a two-step implementation has been developed following the rationale behind divide-and-conquer strategy. The mentioned two steps have been:
+\begin{itemize}
+	\item Assignation: selection of the optimal assignment of components to devices in terms of affinity criteria.
+	\item Representation: search of the optimal layout for each assignment. 
+\end{itemize}
+
+This implementation has been completed with an event-driven system to include context information. 
+
+The model has been validated through an evaluation model. A battery of use cases that involve subsets of the characterised components and devices and the parametrisation of their properties have been defined and the quality of the resulting user interfaces have been compared to the optimal. The obtained solutions meet the expectations of broadcasters and researchers and the use cases tested offer a quality of approximately 90\% of the optimal. Furthermore, it has been proved that the implemented solution is much more efficient than the exploration of the entire combination in terms of processing times and hence of power consumption. Moreover, it has been shown that the provided model is general enough to be extended to any type of content, device or context and that it is ready for technological changes as well as continuous adaptive learning processes. 
+
+Finally, it has been checked that the proposed methodology which is oriented to hybrid broadcast-Internet scenarios, can also be valuable for completely different fields such as industry or crisis environments. 
+
+In summary, this research provides progress beyond the-state-of-the-art for the optimisation of user interface of multi-device media services, presenting a methodology that provides as an outcome adaptation models that take into account several user interface elements and design factors to dynamically distribute and adapt the content to multiple devices being used simultaneously, in real-time and in any context. The provided methodology eases developers the generation of COPE based seamless and self-adaptive applications, with simple parametrisations being the only task to accomplish. 
+
+\section{Future Work}
+
+During research activities, the literature review, the design and implementation of the model and the analysis of the results, different aspects were identified to complement or extend the research presented in this thesis: 
+\begin{itemize}
+	\item The exhaustive analysis of each parameter, intuitively or reasonably assigned in the implementation of the model defined in Chapter \ref{chap:adaptation}, requires much work.
+	\item Specific requirements or limitations could be added for each use case, such as the possibility of creating duplicated components during the \textit{assignation}, as well as not showing specific non-critical components depending on the context. The model could easily assimilate these types of requirements on its implementation by treating it as another component of the same type or removing a specific one. 
+	\item New devices and components could be considered such as AR headsets and novel contents. The integration of these devices and components may set out some specific challenges. 
+	\item An extensive user evaluation could be performed to validate the model from the point of view of the TV viewer. Performing such an evaluation is probably premature, as multi-device broadcast-broadband applications are still uncommon and few users are familiar with them. When these types of applications are commonplace, it will be easier to select a user base to validate the presented methodology.
+	\item The role of the context should be analysed more in detail and parameters of the three defined parts i.e. user context, physical context and system context, could be taken into account and see the way they could affect to the adaptation process.
+	\item The analysis of the context could lead to learning processes that allow for modifying or refeeding the model with context information: the interaction of the viewers in general, personalisation for each viewer, analysing how the environmental factors impact the adaptation preferences, etc. In this way a complete context service could be built on top of our system to boost sophisticated smart environments. 
+	\item More fields of applications could be explored apart from the ones presented in Chapter \ref{chap:fields}. For instance, education could be a field in which multi-device environments are used. Nowadays tablets and laptops are usually found at schools and students visualise the lessons and do their exercises by using them. Therefore, the work presented in this thesis could contribute to generate a service in which the teacher can manage different contents and share them with the students in a more sophisticated way. 	
+\end{itemize}
+ 
+
+  
+
+	
+
+
+

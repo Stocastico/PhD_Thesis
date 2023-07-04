@@ -1,0 +1,19 @@
+
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%: ----------------------- introduction file header -----------------------
+
+
+%------------------------------------------------------------------------- 
+
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{Content/figures/PNG/}{Content/figures/JPG/}{Content/figures/PDF/}{Content/figures/}}
+\else
+    \graphicspath{{Content/figures/EPS/}{Content/figures/}}
+\fi
+
+
+\input{Conclusions/conclusions}

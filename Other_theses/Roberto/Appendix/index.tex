@@ -1,0 +1,27 @@
+
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%: ----------------------- introduction file header -----------------------
+
+
+%------------------------------------------------------------------------- 
+
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{Content/figures/PNG/}{Content/figures/JPG/}{Content/figures/PDF/}{Content/figures/}}
+\else
+    \graphicspath{{Content/figures/EPS/}{Content/figures/}}
+\fi
+
+
+\input{Appendix/appendix}
+
+\chapter{Acronyms}
+\begingroup
+\renewcommand{\chapter}[2]{}%
+\renewcommand{\addcontentsline}[3]{}% Make \addcontentsline a no-op
+\input{Appendix/glossary}
+\printnomenclature % [] = distance between entry and description
+\endgroup

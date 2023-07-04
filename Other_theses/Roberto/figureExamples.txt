@@ -1,0 +1,13 @@
+\begin{figure}
+\centering
+\includegraphics[width=1\textwidth]{gorkaRM.pdf}
+\caption[Information Retrieval Reference Model]{Information Retrieval Reference Model \cite{thesisGorka}}
+\label{fig:gorkaRM}
+\end{figure}
+
+\begin{figure}[!h!]
+	\centering
+		\includegraphics[width=0.60\textwidth]{Content/figures/PDF/DIKW_Pyramid.pdf}
+	\caption{DIKW Pyramid}
+	\label{fig:DIKWPyramid}
+\end{figure}
