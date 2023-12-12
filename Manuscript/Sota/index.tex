@@ -1,0 +1,38 @@
+
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%: ----------------------- introduction file header -----------------------
+
+
+%------------------------------------------------------------------------- 
+
+
+% the code below specifies where the figures are stored
+\ifpdf
+\graphicspath{{Sota/figures/PNG/}{./figures/}{Sota/figures/PDF/}{Sota/figures/}}
+\else
+\graphicspath{{Sota/figures/EPS/}{Sota/figures/}{./figures}}
+\fi
+
+\newcommand{\papersWithNumStudentInfo}[0]{103 }
+\newcommand{\papersWithEvaluation}[0]{65 }
+\newcommand{\hardwareHMD}[0]{8 }
+\newcommand{\papersAfterTwentyEighteen}[0]{104 }
+\newcommand{\allPapers}[0]{3070 }
+\newcommand{\duplPapers}[0]{395 }
+\newcommand{\papersCheckAbstract}[0]{2675 }
+\newcommand{\papersToRead}[0]{359 }
+\newcommand{\papersExludedAfterReading}[0]{228 }
+\newcommand{\papersSelected}[0]{131 }
+\newcommand{\papersMultiuser}[0]{23 }
+\newcommand{\papersCollab}[0]{16 }
+\newcommand{\papersGames}[0]{17 }
+
+\chapter{Related Work}
+\chaptermark{Related Work}
+\label{chap:sota}
+
+This Chapter presents a systematic review of the literature on the use of AR applications in primary and secondary schools, with a specific focus on collaborative, multi-user and interactive applications. It is based on a paper that included information up to the end of 2020 \citep{10.3897/jucs.76535}. The work is now updated with papers published as of September 2023. This study synthesises a set of 131 publications since 2015 and performs a qualitative analysis of their content. The review describes the current state-of-the-art of research in AR and presents the trends for the future of AR applications in educational settings, analysing the relevance of the multi-user interaction challenge within the augmented reality ecosystem.
+
+\input{Sota/sota}

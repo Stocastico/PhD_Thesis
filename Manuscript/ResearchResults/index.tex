@@ -1,0 +1,33 @@
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%: ----------------------- introduction file header -----------------------
+
+
+%------------------------------------------------------------------------- 
+
+
+% the code below specifies where the figures are stored
+%\ifpdf
+%    \graphicspath{{Content/figures/PNG/}{Content/figures/JPG/}{Content/figures/PDF/}{Content/figures/}}
+%\else
+%    \graphicspath{{Content/figures/EPS/}{Content/figures/}}
+%\fi
+\graphicspath{{ResearchResults/figures/}{ResearchResults/figures/JPG/}{ResearchResults/figures/PDF/}{ResearchResults/figures/}{ResearchResults/figures/EPS/}}
+
+\chapter{Interoperable Architecture for Collaborative Augmented Reality}
+\chaptermark{Architecture}
+\label{chap:arch}
+
+In this Chapter the \arch{} architecture is presented. \arch{} is an interoperable architecture that simplifies the creation of collaborative AR applications, enables multi-user functionalities and provides advanced mechanisms for data analysis and visualisation. The architecture aims to answer not only the gaps identified in Chapter \ref{chap:sota}, but also to the design objectives identified analysing the answers to a survey completed by 47 primary and secondary school teachers. The architecture has been validated through the development of 3 proofs of concept. \arch{} provides a more mature technological ecosystem that fosters the emergence of AR applications for education and their inclusion in existing school programs.
+
+\input{ResearchResults/architecture}
+
+\chapter{Validation of the Proposed Architecture}
+\chaptermark{Validation}
+\label{chap:eval}
+
+This Chapter presents an application called \appname{}, a multiplatform AR application for education. It is based on the \arch{} architecture presented in the previous chapter, and designed with the help of secondary school teachers. The app provides interoperability, multi-user support, integration with LMSs and data analytics capabilities, thus simplifying the development of collaborative AR learning experiences. \appname{} was developed with the purpose of validating, in an educational environment, the \arch{} architecture.
+The application has been tested by \numstudents/ students and 3 teachers from \numschools/ different educational institutions to evaluate the usability as well as the impact of collaboration functionalities in the engagement of the students.
+
+\input{ResearchResults/evaluation}

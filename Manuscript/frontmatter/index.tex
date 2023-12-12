@@ -1,0 +1,23 @@
+
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%: ----------------------- introduction file header -----------------------
+
+
+%------------------------------------------------------------------------- 
+
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{Content/figures/PNG/}{Content/figures/JPG/}{Content/figures/PDF/}{Content/figures/}}
+\else
+    \graphicspath{{Content/figures/EPS/}{Content/figures/}}
+\fi
+
+\chapter{Scope of the Research}
+\label{chap:introduction}
+
+This initial Chapter introduces the dissertation by providing an introduction of the research work. It provides an initial overview and presents the motivation behind the work, as well as the defined objectives, hypotheses, and the methodology employed. The purpose is to set the stage for an in-depth exploration in the subsequent Chapters. It also includes a Section detailing the structure of this document. 
+
+\input{Introduction/introduction}

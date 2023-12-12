@@ -113,7 +113,7 @@
 %\usepackage[english,activeacute]{babel}
 
 
-\usepackage{todonotes} %iolaizola:added to create visible TODO notes
+%\usepackage{todonotes} %iolaizola:added to create visible TODO notes
 
 %:-------------------------- Glossary/Abbrev./Symbols -----------------------
 
@@ -356,7 +356,7 @@
 \setlength{\evensidemargin}{0.5cm}
 \setlength{\topmargin}{-0.7cm}
 \setlength{\headheight}{0.01cm}
-\setlength{\headsep}{1.00cm}
+\setlength{\headsep}{1.20cm}
 \setlength{\textheight}{23.0cm}
 \setlength{\textwidth}{13.9cm}
 \setlength{\marginparsep}{1mm}
@@ -839,7 +839,7 @@
 % Macros help you summarise frequently repeated Latex commands.
 % Here, they are placed in an external file /Latex/Macros/MacroFile1.tex
 % An macro that you may use frequently is the figuremacro (see introduction.tex)
-\include{Latex/Macros/Macros}
+%\include{Latex/Macros/Macros}
 
 
 %:-------------------------- PDF Parameters Setup -----------------------
@@ -847,10 +847,10 @@
 
 % if output to PDF then put the following in PDF header
 \ifpdf  
-    \pdfinfo { /Title  (PhD: \myTitle )
+    \pdfinfo { /Title  (PhD: A Novel Architecture for Collaborative Augmented Reality Experiences for Education )
                /Creator (TeX)
                /Producer (pdfTeX)
-               /Author (Name surname)
+               /Author (Stefano Masneri)
                /CreationDate (D:YYYYMMDDhhmmss)  %format D:YYYYMMDDhhmmss
 %               /ModDate (D:YYYYMMDDhhmm)
                /Subject (xyz)
@@ -886,7 +886,7 @@
 
 
 %Will add a list of hyphenated words
-\input{Latex/hyphenwordlist.tex}
+%\input{Latex/hyphenwordlist.tex}
 
 
 

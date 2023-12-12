@@ -1,0 +1,23 @@
+
+% this file is called up by thesis.tex
+% content in this file will be fed into the main document
+
+%: ----------------------- introduction file header -----------------------
+
+
+%------------------------------------------------------------------------- 
+
+
+% the code below specifies where the figures are stored
+\ifpdf
+    \graphicspath{{Content/figures/PNG/}{Content/figures/JPG/}{Content/figures/PDF/}{Content/figures/}}
+\else
+    \graphicspath{{Content/figures/EPS/}{Content/figures/}}
+\fi
+
+\chapter{Conclusions and future work}
+\label{chap:conclusions}
+
+In this final Chapter, the main findings of this research are presented. Besides summarising the Ph.D. work, the scientific contributions are presented and potential directions for future research are explored. Different ways to extend the work outside the field of education or applying it to other technologies beyond AR are suggested.
+
+\input{Conclusions/conclusions}
