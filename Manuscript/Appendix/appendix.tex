@@ -1,4 +1,4 @@
-\chapter{Teacher survey}
+\chapter{Teacher survey} \label{append:teachsur}
 This is the survey that was presented to the teachers and whose results helped defining the requirements of the architecture presented in Chapter \ref{chap:arch}. The survey was created as a web-based form and, depending on how a teacher answered, not all the questions were presented. The survey included also some background information as well as images. Furthermore, some of the questions only admitted answers from a predefined set. We omitted these redundant information for brevity, but the interested reader can find the full version of the survey online\footnote{\url{https://anon.to/oBIuF6}}.
 
 %\renewcommand{\arraystretch}{1.1}
@@ -6,6 +6,7 @@ This is the survey that was presented to the teachers and whose results helped d
 \toprule
  & Question\\
 \midrule
+\endhead
     \textbf{Q1} & What is the main subject you teach? \\
     \textbf{Q2} & How many years of experience do you have? \\
     \textbf{Q3} & What is the average number of students per class in your school? \\
@@ -51,11 +52,13 @@ the work of teachers. How do you think you could use artificial intelligence in 
 
 
 
-\chapter{Student questionnaire}
+\chapter{Student questionnaire} \label{append:stuqu}
 The following is the questionnaire that students were asked to fill after using \appname{}, the application described in Chapter \ref{chap:eval}. Students were asked to fill a 20-item subjective questionnaire, using a Likert scale from 1 to 5 to assess their agreement with each sentence. The items in the questionnaire belong to four different clusters, depending on the aspect to evaluate (collaborative aspects, app usability, functionality, interest as an educational tool). Questions Q12 and Q15 were filled only by students who used the mobile applications, as the ones using the web interface could not receive suggestions but only provide them. Q18 and Q20 were framed slightly differently for users on a mobile device or using a PC: for the former group, the question referred to the usage of AR, while for the latter it was about the inclusion of 3D elements in the application. 
 
-%\renewcommand{\arraystretch}{1.1}
-\begin{longtable}{p{0.05\textwidth}>{\arraybackslash}p{0.92\textwidth}}
+
+\begin{table*}[ht]\centering
+\begin{tabular}{p{0.05\textwidth}>{\arraybackslash}p{0.92\textwidth}}
+%\begin{longtable}{p{0.05\textwidth}>{\arraybackslash}p{0.92\textwidth}}
 \toprule
  & Question\\
 \midrule
@@ -80,8 +83,10 @@ The following is the questionnaire that students were asked to fill after using 
     \textbf{Q19} & There are several ways to collaborate with my classmates through the application. \\
     \textbf{Q20} & Thanks to augmented reality / 3D elements I have felt immersed in the learning activity. \\
 \bottomrule
-\end{longtable}
+%\end{longtable}
 \label{tab:studentquestionnaire}
+\end{tabular}
+\end{table*}
 
 \chapter{Resume}
 

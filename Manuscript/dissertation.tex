@@ -63,6 +63,7 @@
 \usepackage{afterpage}
 \usepackage{longtable,array}
 \usepackage[export]{adjustbox}
+%\usepackage{titlecaps}
 
 % *** SUBFIGURE PACKAGES ***
 \usepackage{subfig}
@@ -83,8 +84,11 @@
 \usepackage{longtable}
 \captionsetup[table]{aboveskip=2pt}
 \captionsetup[table]{belowskip=2pt}
-\usepackage[acronym,nomain,nonumberlist]{glossaries}
+\usepackage[acronym,nomain,nonumberlist]{glossaries-extra}
 \glsdisablehyper
+\setabbreviationstyle[acronym]{long-short}
+\glssetcategoryattribute{acronym}{glossdesc}{title}
+\MFUhyphentrue
 \makeglossaries
 
 \input{frontmatter/acronyms}

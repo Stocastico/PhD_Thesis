@@ -1,9 +1,9 @@
 %%%%%%%%%%%%%%%%%%%% INTRO %%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Overview}\label{eval:introduction}
 
-Despite huge improvements in both hardware and software which led to an increased offer of AR applications for mobile devices and AR headsets, as well as extensive research on the usage of AR in education \citep{7943075, akccayir2017advantages, chen2017new, ibanez2018augmented, pellas2019augmenting, 10.3897/jucs.76535}, the usage of AR in primary and secondary schools is still not common \citep{doi/10.2759/121671}.
+In the last few years, significant improvements in both hardware and software have led to a proliferation of AR applications for mobile devices and AR headsets, and extensive research has been conducted on the integration of AR in education \citep{7943075, akccayir2017advantages, chen2017new, ibanez2018augmented, pellas2019augmenting, 10.3897/jucs.76535}. However, despite these advancements and research efforts, the use of AR in primary and secondary schools is still not common \citep{doi/10.2759/121671}.
 The main reasons behind this were identified in Chapters \ref{chap:sota} and \ref{chap:arch}, namely the limited collaboration capabilities of existing apps, the inability to create new content and the difficulty of adapting to existing school curricula.
-In Chapter \ref{chap:arch}, \arch{} was presented as an interoperable architecture that enables the creation of multi-user AR applications, simplifies the development process and allows the stakeholders to add new content to existing applications, track user progress and integrate application data into the \gls{lms} used by the teachers.
+In Chapter \ref{chap:arch}, \arch{} was presented as an interoperable architecture. It enables the creation of multi-user AR applications and simplifies the development process. \arch{} also allows the stakeholders to add new content to existing applications, track user progress and integrate application data into the \gls{lms} used by the teachers.
 
 The analysis of the answers provided by the teachers allowed the identification of 6 \glspl{do}, as described in Section \ref{arch:architecture}. A conceptual evaluation of the \arch{} architecture was performed through the creation of 3 \glspl{poc} (presented in Section \ref{arch:implementation}). The aim of this initial evaluation was to demonstrate that \arch{} fulfils the aforementioned \glspl{do}.
 
@@ -21,8 +21,8 @@ The primary goal of the application is to demonstrate the potential of the \arch
 Additionally, the game aims to enhance student engagement through the collaborative functionalities provided by \arch{}.
 %how collaborative \gls{ar} applications built using the cleAR architecture can increase students' engagement and be easily included in school curricula, thanks to its integration and customisation capabilities.
 The application has been developed incorporating feedback from the teachers of a Basque primary and secondary school association\footnote{\url{https://ikastola.eus/}} and it has been evaluated after being tested with \numstudents/ students in three different educational institutions.
-Once the test was complete, teachers were interviewed while students were asked to fill a short questionnaire about the \appname{} \gls{ui}, the \gls{ux} it offered, as well as its effectiveness as a tool for raising the engagement of the students and enabling collaboration between them.
-To perform a quantitative evaluation about \appname{} collaboration capabilities, the app collected data \textendash{} in the form of xAPI statements \citep{xAPIspec} \textendash{} about its usage, the number of interactions between students and the performance of the students.
+Once the test was complete, teachers were interviewed while students were asked to fill in a short questionnaire about the \appname{} \gls{ui} and the \gls{ux} it offered. The questionnaire also asked about the app effectiveness as a tool for raising the engagement of the students and enabling collaboration between them.
+To perform a quantitative evaluation about \appname{} collaboration capabilities, the app collected data \textendash{} in the form of xAPI statements \citep{xAPIspec} \textendash{} about its usage, the number of interactions between students and their performance.
 
 The choice of Geography as the application domain is motivated by the fact that geographical exploration is an integral part of child development \citep{catling1993whole}, and the use of maps helps students improve spatial thinking skills \citep{collins2018impact}.
 The application is structured as a quiz where students take turns to answer Geography questions.
@@ -31,7 +31,7 @@ If a student is struggling to answer a question, other students can interact in 
 
 The main contributions of this Chapter can be summarised as:
 \begin{itemize}
-    \item A complete description of the application and the feasibility of implementing the different components of the \arch{} architecture to fulfill all the design objectives;
+    \item A complete description of the application and the feasibility of implementing the different components of the \arch{} architecture to fulfil all the design objectives;
     \item A qualitative evaluation of the technology integrated in the application, based on the questionnaires filled in by the \numstudents/ students and the interviews with their teachers;
     \item An analysis of the data collected by the application during the user study, with a focus on the effects of collaboration capabilities on the quiz results and the engagement of the students.
 \end{itemize}
@@ -69,7 +69,7 @@ The work of \cite{thamrongrat2019design} evaluated the learning effect for teach
 Another study \citep{alrashidi2017evaluating} compared the effectiveness of learning software debugging concepts using an AR application versus a non-AR approach.
 
 Applications used in schools usually generate data that are stored on the school \gls{lms}.
-A standard that is recently gaining traction for collecting data about the activities of the learners is eXperience API (xAPI)\footnote{\url{https://xapi.com/overview/}}, an open-source software specification that makes it possible to collect data about a wide range of learning experiences. This is achieved by sending each activity that needs to be recorded to a \gls{lrs} in a consistent and secure format \citep{xAPIspec}.
+A standard that is recently gaining traction for collecting data about the activities of the learners is eXperience API, an open-source software specification that makes it possible to collect data about a wide range of learning experiences. This is achieved by sending each activity that needs to be recorded to a \gls{lrs} in a consistent and secure format \citep{xAPIspec}.
 The activities are collected as statements stored as JSON objects.
 Statements can be tuned to a specific use case by defining a vocabulary of valid statements.
 \cite{9225931} described a system where xAPI is used to perform learning analytics in an AR environment, while \cite{wu2020design} used xAPI to collect data for a 3D design course.
@@ -125,7 +125,7 @@ As shown in Figure \ref{fig:teacher_interface}, the teacher interface consists o
 The teachers who filled in the questionnaire described in Chapter \ref{chap:arch} mentioned that one of the factors limiting the usage of AR apps in schools is the lack of customisation capabilities.
 In this respect, \appname{} provides an additional web interface from which the teacher can create new sets of questions.
 To minimize the amount of work required by the teacher, the coordinates of each location are computed automatically using the Wikimedia API\footnote{\url{https://www.mediawiki.org/wiki/Wikimedia_REST_API}} and the questions are stored as JSON files, which are directly added to the application.
-The interface of the watchers is web-based, too, and has a look and feel similar to the teacher interface.
+The interface of the \textit{watchers} is web-based, too, and has a look and feel similar to the teacher interface.
 
 For the application to successfully achieve interoperability (\textbf{DO1}), several types of hardware as well as software libraries need to be supported.
 In the aforementioned survey, the teachers reported a wide spectrum of devices available in their schools. Chromebooks and Android tablets were the most commonly used but other options included laptops, PCs, smartphones (both Android and iOS based) and iPads.
@@ -144,7 +144,7 @@ The information is shared 30 times per second and it allows a smooth \gls{ux} fo
 A previous approach tried to combine message passing and the transmission of the screen of the active user, using WebRTC, to the students using a PC to better simulate the AR experience \citep{UnityRenderStreaming}.
 Unfortunately, such a solution has proven not to be scalable. Due to the poor support Unity has for WebRTC servers such as Janus, the application suffered delays which severely impacted the performance. With more than 5 users the UX was severely affected, and the app became unusable when more than 10 users were connected to the same session.
 
-To comply with the data analytics design objective (\textbf{DO3}, \textbf{DO4} and \textbf{DO5}) the application enables data collection through the storage of eXperience API (xAPI) statements on a Learning Locker instance. 
+To comply with the data analytics design objectives (\textbf{DO3}, \textbf{DO4} and \textbf{DO5}) the application enables data collection through the storage of xAPI statements on a Learning Locker instance. 
 Storing statements across each session enables the application to keep track of user activity and to store additional logging messages that simplify application debugging.
 Learning Locker provides basic analytics and plotting capabilities through a web interface, as well as filtering and exporting the data in CSV format.
 These functionalities have been extended through the development of a Python package\footnote{\url{https://stocastico.github.io/xapi_analysis/}} that includes methods to perform advanced data exploration and plotting, as well as running common machine learning models on xAPI statements data.
@@ -153,26 +153,34 @@ For this reason, the package directly integrates GPT-4 \citep{openai2023gpt4, Os
 The package has been used to analyze the data collected during the evaluation of the app and the results will be presented in Section \ref{eval:results}.
 
 Finally, to demonstrate how the aforementioned architecture enables developers to easily create multi-user applications (\textbf{DO6}), the developer of \appname{} was asked if and how the architecture helped him in the development process.
-The developer mentioned that the architecture API enabled him to extend the application to enable multiple users in a transparent way. He could avoid having to deal with low-level networking issues or having to implement platform specific methods.
-While it was not possible to estimate the amount of lines of code or hours saved by its usage, the developer said that he was satisfied by the capabilities of the architecture and would use it again for future projects.
-Nevertheless, in order to enable teachers to create an ecosystem of collaborative AR applications for education, the developer mentioned that the availability of Authoring Tools to easily create applications on top of the \arch{} architectural design would be desirable.
+The developer mentioned that the architecture API enabled him to add multi-user functionalities in a transparent way. He neither had to deal with low-level networking issues nor implement platform specific methods.
+While it was not possible to estimate the amount of lines of code or hours saved by using \arch{}, the developer said that he was satisfied with the capabilities of the architecture and would use it again for future projects.
+Nevertheless, in order to enable teachers to create an ecosystem of collaborative AR applications for education, the developer mentioned that the availability of authoring tools to easily create applications on top of the \arch{} architectural design would be desirable.
 
 
 %%%%%%%%%%%%%%%%%%%% EVALUATION %%%%%%%%%%%%%%%%%%%%%
 \section{Evaluation}\label{eval:evaluation}
 
-Our study aims to investigate how collaborative AR solutions may benefit the learning experience, and what, if any, are the usability issues of multi-user applications that can be used on different devices such as tablets, mobile phones or laptops.
-In the literature, there is no agreement on how to conduct evaluation of AR-based educational apps.
-The survey from \cite{santos2013augmented} analyzes 87 AR applications and the evaluation protocols included interviews, observing and coding overt behaviour and expert reviews.
+Our study aims to investigate how collaborative AR solutions may benefit the learning experience, and which are the usability issues of multi-user, multiplatform applications.
+In the literature, unfortunately, there is no agreement on how to conduct evaluation of AR-based educational apps.
+The survey from \cite{santos2013augmented} analyses 87 AR applications and the evaluation protocols included interviews, observing and coding overt behaviour and expert reviews.
 Of those who used questionnaires, the majority crafted their own.
-Among the works that used established questionnaires, some relied on the ISONORM Usability questionnaire \citep{prumper1999test}, Technology Acceptance Model \citep{davis1996critical}, Constructivist Multimedia Learning Environment Survey \citep{maor1999teacher}, Instructional Material Material Survey \citep{keller1987development}, Intrinsic Motivation Inventory \citep{ryan2000self}.
+Among the works that used established questionnaires, some relied on the ISONORM Usability questionnaire \citep{prumper1999test}, Technology Acceptance Model \citep{davis1996critical}, Constructivist Multimedia Learning Environment Survey \citep{maor1999teacher}, Instructional Material Survey \citep{keller1987development}, Intrinsic Motivation Inventory \citep{ryan2000self}.
 The number of participants in the evaluation of AR applications for education varies a lot depending on the study.
 The systematic review of the literature published by \cite{masneri2020work}, of which Chapter \ref{chap:sota} represents an extension, shows that the number of participants varies between 2 and 290 participants. Another survey by \cite{santos2013augmented} analysed studies where the number of participants ranged from 4 to 419.
 
-In this work, a questionnaire which adapts and extends the Positive System Usability Scale (P-SUS) \citep{brooke1996sus, sauro2011designing}, with a few additional questions added to specifically evaluate the collaborative capabilities of the application, was developed and used.
-The questions, presented in Appendix A, were grouped into 4 classes depending on what they were evaluating: the interest of the application as an educational tool, the usability of the app, its collaboration capabilities and its functionality.
+In this work, a questionnaire which adapts and extends the Positive System Usability Scale (P-SUS) \citep{brooke1996sus, sauro2011designing} was used. The questionnaire included a few additional questions to specifically evaluate the collaborative capabilities of the application.
+The questions, presented in Appendix \ref{append:stuqu}, were grouped into 4 classes depending on what they were evaluating: the interest of the application as an educational tool, the usability of the app, its collaboration capabilities and its functionality.
 Additionally, the participants could provide free-form feedback about the overall experience and whether they would recommend it to other students.
 Finally, an interview with the teachers was conducted to collect their feedback about the learning experience, how collaboration may impact the involvement of the students, how  AR apps could be used to evaluate the students knowledge of a subject and how they would take advantage of the data collected through the application.
+
+At the beginning of the evaluation, the participants were briefed about the experiment and its purpose and were asked to sign a consent form.
+The questionnaires were anonymous but had an ID associated, so that during data analysis it was possible to associate the answers to the questionnaires with the data collected from each device through the xAPI statements.
+The evaluation involved \numstudents/ students from \numschools/ educational institutions in San Sebastian (\textit{Colegio Salesianos Donostia}\footnote{\url{https://www.salesianosdonostia.com/es}}, \textit{IES Xabier Zubiri Manteo}\footnote{\url{https://zubirimanteo.hezkuntza.net/es/inicio}} and \textit{Universidad de Deusto}\footnote{\url{https://www.deusto.es/es/inicio}}) between March and May 2023.
+Each experiment involved students of different ages (14, 17 and 19 years old) and their corresponding teachers.
+None of the participants had previous experience with AR applications, but they were familiar with the hardware devices (smartphones, tablets and PCs) used during the evaluation.
+In each school, the students were split into two groups: the first one represented the \textit{players}, tasked with answering the quiz questions using the application on mobile or tablet devices, while the second group represented the \textit{watchers}, who used a laptop or PC to see how the students answered the quiz and provided suggestions along the way.
+Table \ref{tab:details_participants} shows the number of participants in each experiment, as well as details about the type of devices used when interacting with the application.
 
 \begin{table*}[htbp]
 \caption{\fontsize{10pt}{11pt}\selectfont{\itshape{Details of the demographics and number of devices used across each test.}}}
@@ -193,15 +201,7 @@ Finally, an interview with the teachers was conducted to collect their feedback 
   \label{tab:details_participants}
 \end{table*}
 
-At the beginning of the evaluation, the participants were briefed about the experiment and its purpose and were asked to sign a consent form.
-The questionnaires were anonymous but had an ID associated, so that during data analysis it was possible to associate the answers to the questionnaires with the data collected from each device through the xAPI statements.
-The evaluation involved \numstudents/ students from \numschools/ educational institutions in San Sebastian (\textit{Colegio Salesianos Donostia}\footnote{\url{https://www.salesianosdonostia.com/es}}, \textit{IES Xabier Zubiri Manteo}\footnote{\url{https://zubirimanteo.hezkuntza.net/es/inicio}} and \textit{Universidad de Deusto}\footnote{\url{https://www.deusto.es/es/inicio}}) between March and May 2023.
-Each experiment involved students of different ages (14, 17 and 19 years old) and their corresponding teachers.
-None of the participants had previous experience with AR applications, but they were familiar with the hardware devices (smartphones, tablets and PCs) used during the evaluation.
-In each school, the students were split into two groups: the first one represented the \textit{players}, tasked with answering the quiz questions using the application on mobile or tablet devices, while the second group represented the \textit{watchers}, who used a laptop or PC to see how the students answered the quiz and provided suggestions along the way.
-Table \ref{tab:details_participants} shows the number of participants in each experiment, as well as details about the type of devices used when interacting with the application.
-
-Once each participant had a device assigned, they were asked to connect to the application by selecting the session ID representing the experiment and the user ID which would be used as the \textit{Actor} value for the xAPI statements generated while using the application.
+Once each participant had a device assigned, they were asked to connect to the application by selecting the session ID representing the experiment and the user ID. The latter would be used as the \textit{Actor} value for the xAPI statements generated while using the application.
 After a short Q\&A session to clarify doubts about the app usage the teacher started the quiz and the students would then take turns to answer two sets of questions.
 Once the quiz was over, the teacher stopped the data collection and was able to check the score of each student and to export the data.
 After logging out of the session, the students filled in the questionnaires while the post-study interview with the teacher was conducted.
@@ -210,7 +210,7 @@ After logging out of the session, the students filled in the questionnaires whil
 %%%%%%%%%%%%%%%%%%%% RESULTS %%%%%%%%%%%%%%%%%%%%%%%%
 \section{Results and Discussion}\label{eval:results}
 
-In this Section, the results of the survey as well as the data collected from the app are presented and discussed. An extended version which also includes a subgroup analysis of the data split for different age group, is available in the data repository\footnote{\url{https://github.com/Stocastico/Evaluation_paper}}. The quantitative results from the responses to the post-intervention survey (shown in Appendix A) are summarised in Figure \ref{fig:survey_all}. They are shown as stacked bar charts \citep{friedman1999rating}, where the chart on the left  refers to the answers to each question and the chart on the right to the groups of questions mentioned in Section \ref{eval:evaluation}.
+In this Section, the results of the survey as well as the data collected from the app are presented and discussed. An extended version which also includes a subgroup analysis of the data split for different age group, is available in the code and data repository\footnote{\url{https://github.com/Stocastico/Evaluation_paper}}. The quantitative results from the responses to the post-intervention survey (shown in Appendix \ref{append:stuqu}) are summarised in Figure \ref{fig:survey_all}. They are shown as stacked bar charts \citep{friedman1999rating}, where the chart on the left  refers to the answers to each question and the chart on the right to the groups of questions mentioned in Section \ref{eval:evaluation}.
 From the figure it can be appreciated that the application was very well received by the students and that every question except the first one was answered positively (\textit{Agree} or \textit{Strongly agree}) more than 60\% of the time.
 The average rating for each question ranges from $3.45$ to $4.43$, with limited variability across answers, with the standard deviation being below 1 for most of the questions.
 The plot on the right in Figure \ref{fig:survey_all} shows similar results: the students assigned the highest score to questions related to Usability, especially question 2 (\textit{I found the application to be simple}) and 3 (\textit{I thought the application was easy to use}). The questions related to Functionality received a high score as well, while the ones relating to the Educational content of the app show the highest variability: those questions received the highest amount of negative answers while also receiving the highest score more than 40\% of the time. 
@@ -245,8 +245,8 @@ The reason for the lower score, as identified by the comments provided by the st
     \label{fig:survey_split_grouped}
 \end{figure*}
 
-Since \appname{} collected data in the form of xAPI statements, an analysis of the data received was conducted in order to detect whether there was a correlation between the score in the questionnaire and the number of statements collected by the application for each user.
-The actions registered by the app include both interaction between students, such as the suggestions sent, and the interactions of a user with the app.
+Since \appname{} collected data in the form of xAPI statements, an analysis of the data received was conducted. This showed that there is a correlation between the score in the questionnaire and the number of statements collected by the application for each user.
+The actions registered by the app include both interactions between students, such as the suggestions sent, and the interactions of a user with the app.
 As shown in Figure \ref{fig:num_interactions}, there is a high variability in how much the students interacted. It is clear, though, that the \textit{players} (the students using a mobile device and interacting with the augmented content) were much more involved in using \appname{}. This is probably because their role was much more interactive and immersive.
 
 \begin{figure}[htbp]
@@ -279,7 +279,7 @@ In this case the analysis showed a significant positive correlation ($r = .37$, 
 
 Finally, a clustering analysis of the data was performed, to check if it is possible to identify distinct groups of users.
 In this case, the focus was only on the students who used a mobile device, since they provided a greater number of features to work with.
-It was considered as variables of interest the average time left per question, the number of suggestion accepted, the total number of interactions and the mean value of the answers in the survey.
+The average time left per question, the number of suggestion accepted, the total number of interactions and the mean value of the answers in the survey were the four variables considered.
 A dimensionality reduction using PCA \citep{jolliffe2002principal}, shown on the left in Figure \ref{fig:clustering}, revealed that the first two principal components explained more than 70\% of the variance in the data.
 Additionally, a biplot analysis indicated that the most relevant variable for the first principal component was the number of user interactions, while for the second one it was the results of the survey.
 
@@ -291,8 +291,8 @@ In one case it was not possible to clearly identify a common feature in the data
 
 After running the trials in the educational institutions, a post-intervention interview with the teachers was conducted.
 The 3 teachers seemed very intrigued by the possibility of easily being able to use AR in school without having to resort to any specific hardware. They especially valued the fact that the collaborative features of \appname{} encouraged the students to work together to provide the answer, either through the features of the application or simply by talking to each other.
-Another relevant point for the teachers was the possibility of adding new content on their own, as well as the fact that they could export the results to the school LMS.
-The teachers were more sceptical about the AI features provided by the backend. They mentioned that the vast majority of their colleagues do not have sufficient knowledge to perform the analysis on their own. They would rather prefer using a PowerBI or Tableau interface to visualize data and extract basic reports.
+Another relevant point for the teachers was the possibility of adding new content on their own, as well as the fact that they could export the results to the school \gls{lms}.
+The teachers were more sceptical about the AI features provided by the backend. They mentioned that the vast majority of their colleagues do not have sufficient knowledge to perform the analysis on their own. They would rather prefer using a PowerBI or Tableau interface to visualise data and extract basic reports.
 The teachers also mentioned that the role of the \textit{watchers} was too passive and that in longer experiments these students might lose interest. They suggested enabling the role of active user when using a PC, even if that means not using AR components but a browser-based 3D graphics library.
 
 \begin{figure*}[htbp]
@@ -305,7 +305,7 @@ The teachers also mentioned that the role of the \textit{watchers} was too passi
 %%%%%%%%%%%%%%%%%%%% CONCLUSIONS %%%%%%%%%%%%%%%%%%%%
 \section{Final remarks}\label{eval:conclusion}
 
-In this Chapter, \appname{} was presented, a multiplatform AR application which implements collaborative capabilities and gamification concepts. The application is based on a Geography quiz and it fulfills the design objectives identified in Chapter \ref{chap:arch}.
+In this Chapter, \appname{} was presented, a multiplatform AR application which implements collaborative capabilities and gamification concepts. The application is based on a Geography quiz and it fulfils the design objectives identified in Chapter \ref{chap:arch}.
 The evaluation, conducted with 44 students and 3 teachers, and the analysis of the xAPI statements showed that students evaluated very positively the application.
 Additionally, it was measured a small but statistically significant correlation between the ratings in the questionnaire and the engagement of the students. Furthermore, post-study interviews with the teachers identified the collaborative capabilities and the possibility of personalising the app content as being key factors for a sustained usage of AR apps.
 In fact, one of the teachers suggested the possibility of adding more collaborative features, such as a chat system or speech-based interactions to make the application more immersive and more appealing when used in a distributed setting.
