@@ -3,22 +3,15 @@ This dissertation has demonstrated that it is possible to develop collaborative,
 
 At first, an extensive study of the state-of-the-art was performed to analyse recent research work where AR applications for education were described. The aim of the study was threefold:
 \begin{itemize}
-    \item Identify the works describing interactive, multi-user or collaborative AR experiences and compare their main features;
-    \item Understand the motivation behind the usage of AR as an educational tool;
+    \item Identify the works describing interactive, multi-user or collaborative AR experiences and compare their main features.
+    \item Understand the motivation behind the usage of AR as an educational tool.
     \item Measure the impact of using AR in the classroom, by analysing pre-/post- test results or comparing grades versus a control group.
 \end{itemize}
 
 The systematic study of the literature clearly identified a lack of works where multi-user collaborative apps are presented, as well as the lack of a common framework providing multiplatform support for such applications. This led to the decision of developing \ork{}, an open-source library that enables real-time communication between different devices and that, thanks to C\# and Python bindings, can be used on many different platforms such as web apps, iOS or Android devices and \glspl{hmd} like the Microsoft HoloLens.
 
-Then a collaboration with teachers from secondary schools was established to pinpoint what are the limiting factors in the adoption of AR applications in education and what these apps should provide in order to be used effectively. Based on the teachers answers, eleven requirements (summarised in Table \ref{arch:tab:summaryreqs}) were identified, and an architecture was defined based on six design objectives:
-\begin{enumerate}[start=1,label={\bfseries DO\arabic*:}]
-    \item Interoperability;
-    \item Multi-user support;
-    \item Data collection;
-    \item Data visualisation;
-    \item AI-based analytics;
-    \item Ease of development.
-\end{enumerate}
+Then a collaboration with teachers from secondary schools was established to pinpoint what are the limiting factors in the adoption of AR applications in education and what these apps should provide in order to be used effectively. Based on the teachers answers, eleven requirements (summarised in Table \ref{arch:tab:summaryreqs}) were identified, and an architecture was defined based on six design objectives: interoperability (DO1), multi-user support (DO2), data collection (DO3), data visualisation (DO4), AI-based analytics (DO5)
+and ease of development (DO6).
 
 An architecture named \arch{}, that fulfils all the aforementioned design objectives, was developed and tested through the development of three \glspl{poc} (\textit{ARCube}, \textit{xAPI Data Analysis} and \textit{AR Geography Quiz}). The architecture is composed of 4 different modules (Real-time multi-user interactions, Data storage, AI-based analytics and Visualisation tools). A modular architecture offers several advantages, since it is easier to extend and maintain. It also allows developers to choose which modules to include in their existing applications.
 
@@ -31,10 +24,10 @@ The main contribution of this research has been the definition of an architectur
 
 As a result of the objectives mentioned in Section \ref{sec:objectives}, the main contribution can be translated into four specific outcomes:
 \begin{enumerate}[start=1,,ref=C.\arabic*,label={\bfseries C\arabic*:}]
-    \item An in-depth analysis of the state-of-the-art that allows to identify the state of current research on AR in terms of what kind of solutions are currently used in schools, what is the motivation for using AR in education and what effect does AR applications have on students motivation and retention of the topics studied. This is described in Chapter \ref{chap:sota} and reflected in publications \ref{pub:intro} and \ref{pub:sota}; \label{con:sota}
-    \item The development of a multiplatform software library, called \textit{\ork{}}, which allows multi-user interactions in real-time applications. This is described in detail in Section \ref{sec:architecture:multiuser} and reflected in publication \ref{pub:ork};\label{con:ork}
-    \item The definition of \arch, a modular architecture for the creation of AR solutions that satisfies all the requirements identified by teachers and that enables in a seamless fashion multi-user capabilities. This is described in Chapter \ref{chap:arch} and reflected in publications \ref{pub:beh} and \ref{pub:arch};\label{con:arch}
-    \item The implementation and validation of \appname{}, an AR application based on the architecture, that has been tested in three different educational institutions and that validates all the required design objectives. This is described in Chapter \ref{chap:eval} and reflected in publications \ref{pub:eval} and \ref{pub:eval2}.\label{con:eval}
+    \item An in-depth analysis of the state-of-the-art that allows to identify the state of current research on AR in terms of what kind of solutions are currently used in schools, what is the motivation for using AR in education and what effect does AR applications have on students motivation and retention of the topics studied. This is described in Chapter \ref{chap:sota} and reflected in publications \ref{pub:intro} and \ref{pub:sota}. \label{con:sota}
+    \item The development of a multiplatform software library, called \textit{\ork{}}, which allows multi-user interactions in real-time applications. This is described in detail in Section \ref{sec:architecture:multiuser} and reflected in publication \ref{pub:ork}. \label{con:ork}
+    \item The definition of \arch, a modular architecture for the creation of AR solutions that satisfies all the requirements identified by teachers and that enables in a seamless fashion multi-user capabilities. This is described in Chapter \ref{chap:arch} and reflected in publications \ref{pub:beh} and \ref{pub:arch}. \label{con:arch}
+    \item The implementation and validation of \appname{}, an AR application based on the architecture, that has been tested in three different educational institutions and that validates all the required design objectives. This is described in Chapter \ref{chap:eval} and reflected in publications \ref{pub:eval} and \ref{pub:eval2}. \label{con:eval}
 \end{enumerate}
 
 The contributions delivered the following publications:
@@ -59,9 +52,9 @@ Figure \ref{fig:contribs} summarises the contributions of this work and its rela
 Furthermore, all the code developed is available as open source in several GitHub repositories:
 
 \begin{itemize}
-    \item The data analysis conducted while performing the systematic literature review described in Chapter \ref{chap:sota} is available at \url{https://github.com/Stocastico/AR_SLR_Paper};
-    \item \ork{} has separated repositories for the client (\url{https://github.com/tv-vicomtech/orkestraClient}) and server (\url{https://github.com/tv-vicomtech/orkestraServer}) implementations, as well as a separate one for the Unity version (\url{https://github.com/tv-vicomtech/orkestralibUnity});
-    \item The 3 PoCs created for the conceptual evaluation of \arch{}, together with the (anonymised) data collected from the teachers surveys, are available at \url{https://github.com/Stocastico/ARchitecture_paper}, and the library used to simplify the analysis of xAPI statements is available at \url{https://github.com/Stocastico/xapi_analysis};
+    \item The data analysis conducted while performing the systematic literature review described in Chapter \ref{chap:sota} is available at \url{https://github.com/Stocastico/AR_SLR_Paper}.
+    \item \ork{} has separated repositories for the client (\url{https://github.com/tv-vicomtech/orkestraClient}) and server (\url{https://github.com/tv-vicomtech/orkestraServer}) implementations, as well as a separate one for the Unity version (\url{https://github.com/tv-vicomtech/orkestralibUnity}).
+    \item The 3 PoCs created for the conceptual evaluation of \arch{}, together with the (anonymised) data collected from the teachers surveys, are available at \url{https://github.com/Stocastico/ARchitecture_paper}, and the library used to simplify the analysis of xAPI statements is available at \url{https://github.com/Stocastico/xapi_analysis}.
     \item The code of \appname{} is hosted at \url{https://github.com/tv-vicomtech/ARoundtheworld}, while the data collected from the students questionnaires and their analysis is available at \url{https://github.com/Stocastico/Evaluation_paper}.
 \end{itemize}
 

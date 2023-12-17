@@ -6,13 +6,13 @@ Another issue limiting the adoption of AR in schools is the integration of AR ap
 
 To solve these problems, a new architecture has been designed. It is called \arch{} (Collaborative Learning Environment for Augmented Reality), and it is an interoperable architecture that enables the creation of multi-user AR applications while providing advanced mechanisms for data analysis and visualisation. This Chapter presents the following contributions:
 \begin{itemize}
-    \item Definition of multi-user AR requirements and their translation into \glspl{do}. The requirements which an AR-based educational application should satisfy were identified with the help of teachers from an association of Basque primary and secondary schools (Ikastolen Elkartea). They were contacted to complete an online survey. The answers and the feedback provided led to the definition of the requirements and the DOs;
-    \item The description of \textit{\ork{}}, a library to support multi-device applications, whose main function is to facilitate the development of this type of apps. \textit{\ork{}} abstracts the communication complexities that arise when trying to develop multi-device applications, and it is the main component of \arch{};
-    \item An interoperable architecture for multi-user AR-based apps. \arch{} is an architecture that allows educators and developers to design multi-user and collaborative learning experiences. Multi-users interaction allows sharing the same AR experience across users as well as transmission of information of any kind (textual, audio, video or 3D). This information could be, for example, interactions of a student in the augmented space, data gathered by the sensors in the devices, information provided by the professor from his laptop or a live video grabbed by a user with their mobile phone. \arch{} also includes libraries for data analysis and data modeling. As it has been designed with ease of use as one of the core \glspl{do}, the architecture offers the user several web-based tools for data visualisation, reporting and information sharing. As the availability of hardware and software is extremely heterogeneous across different schools, the architecture supports several platforms, both web and native;
+    \item Definition of multi-user AR requirements and their translation into \glspl{do}. The requirements which an AR-based educational application should satisfy were identified with the help of teachers from an association of Basque primary and secondary schools (Ikastolen Elkartea). They were contacted to complete an online survey. The answers and the feedback provided led to the definition of the requirements and the DOs.
+    \item The description of \textit{\ork{}}, a library to support multi-device applications, whose main function is to facilitate the development of this type of apps. \textit{\ork{}} abstracts the communication complexities that arise when trying to develop multi-device applications, and it is the main component of \arch{}.
+    \item An interoperable architecture for multi-user AR-based apps. \arch{} is an architecture that allows educators and developers to design multi-user and collaborative learning experiences. Multi-users interaction allows sharing the same AR experience across users as well as transmission of information of any kind (textual, audio, video or 3D). This information could be, for example, interactions of a student in the augmented space, data gathered by the sensors in the devices, information provided by the professor from his laptop or a live video grabbed by a user with their mobile phone. \arch{} also includes libraries for data analysis and data modeling. As it has been designed with ease of use as one of the core \glspl{do}, the architecture offers the user several web-based tools for data visualisation, reporting and information sharing. As the availability of hardware and software is extremely heterogeneous across different schools, the architecture supports several platforms, both web and native.
     \item Validation of the \glspl{do} within the proposed architecture. Three \gls{poc} applications were developed to perform an initial validation of the architecture (which is further validated with end-users as described in Chapter \ref{chap:eval}). Such PoCs are released as open-source software\footnote{\url{https://github.com/Stocastico/ARchitecture_paper}} and can be used and combined by developers to create their own AR applications. These \glspl{poc} do not include all functionalities required by full-fledged applications: for example, privacy considerations such as compliance to GDPR (or other national or local regulations), user handling or access right management are not included in the PoCs, as such functionalities are application dependent and can vary greatly depending on the scope of the app.
 \end{itemize}
 
-The rest of this Chapter is organised as follows: Section \ref{arch:related} presents the related work. Section \ref{arch:requirements} describes the requirements of a multi-user AR archutecture, how they were collected and how they are translated into design objectives, while Section \ref{arch:architecture} introduces \arch{}. Section \ref{arch:implementation} presents the PoCs implemented to validate \arch{} and, finally, Section \ref{arch:conclusions} summarises the Chapter.
+The rest of this Chapter is organised as follows: Section \ref{arch:related} presents the related work. Section \ref{arch:requirements} describes the requirements of a multi-user AR architecture, how they were collected and how they are translated into design objectives, while Section \ref{arch:architecture} introduces \arch{}. Section \ref{arch:implementation} presents the PoCs implemented to validate \arch{} and, finally, Section \ref{arch:conclusions} summarises the Chapter.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% RELATED
 
@@ -61,10 +61,10 @@ Schools are usually provided with many computers: although there is a lot of var
 
 Regarding software, 77\% of the respondents use software tools (besides Office applications) every school day. The most used applications are Moodle, the Google suite (Classroom, Drive, YouTube, Earth, Maps), SketchUp, Scratch, GeoGebra, Prezi and Lucidpress. The teachers use these applications because they help motivate the students and achieve teaching objectives. The most appreciated aspects of these applications are (in descending order):
 \begin{itemize}
-        \item They provide services which are accessible from different devices (86\% of the respondents) (\textbf{R1});
-        \item Foster the interaction between the teacher and the students (86\%) (\textbf{R2});
-        \item Foster the interaction between multiple students (75\%) (\textbf{R3});
-        \item Provide customisation options (language, content, etc.) (69\%) (\textbf{R4});
+        \item They provide services which are accessible from different devices (86\% of the respondents) (\textbf{R1}).
+        \item Foster the interaction between the teacher and the students (86\%) (\textbf{R2}).
+        \item Foster the interaction between multiple students (75\%) (\textbf{R3}).
+        \item Provide customisation options (language, content, etc.) (69\%) (\textbf{R4}).
         \item Gather data on how the application was used (53\%) (\textbf{R5}).
 \end{itemize}
 
@@ -72,19 +72,19 @@ Apart from these aspects, the teachers underlined as relevant aspects the possib
 
 Regarding AR, the vast majority of the respondents (88\%) never used it at school, and only about 3\% used it more than once and very seldom. The question specifically mentions the usage of AR in school, and the high percentage does not reflect the familiarity of the teachers with the technology or their usage of AR in other contexts. Among those who used it, 75\% of the teachers think that AR improved the learning process of the students. Despite the low usage of AR technology, 78\% of the teachers think that AR can be a very useful tool. When asked what could help in increasing AR adoption in schools, about 75\% of the teachers emphasized they would need to know the existing AR ecosystem better, what apps are available and their capabilities. Half of the teachers said that they would need more time and to have better hardware and software available for the students (\textbf{R7}). Other answers mentioned the necessity of technical support, better localization of the content and the ability to support multi-user interactions (\textbf{R8}), as the students get bored fairly soon doing individual activities. In general, teachers are dissatisfied with AR for education, rating it 2.2 on a Likert scale (where 1 means \textit{very low satisfaction} and 5 means \textit{very high}). The reasons for this is because most of the AR apps are very limited in terms of interactivity and user experience, and there is nearly no content in the Basque language. Despite this, 70\% of the respondents think that AR can be of added value in learning, and the remaining 30\% think that it may be. The main advantages of AR, as identified by the teachers, are:
 \begin{itemize}
-        \item Improvement of the motivation of the students (82\%);
-        \item Better assimilation of concepts (78\%);
-        \item Better way to transfer knowledge (69\%);
-        \item Improvement of spatial orientation (58\%);
+        \item Improvement of the motivation of the students (82\%).
+        \item Better assimilation of concepts (78\%).
+        \item Better way to transfer knowledge (69\%).
+        \item Improvement of spatial orientation (58\%).
         \item Improvement of interactivity (49\%).
 \end{itemize}
 
 On the other hand, the teachers identified several key limitations of AR, as it requires an effort to learn how to use the technology and the school curricula must be adapted to include it. Furthermore, teachers often lack the time to get familiar with the technology and the experience is often not engaging enough, either because the devices used are too old or because the apps lack content. Ideally, the teachers would like to use AR applications that:
 \begin{itemize}
-        \item Enable collaboration between multiple students as well as with the teacher;
-        \item Are highly interactive and with plenty of quality content;
-        \item Can work with a broad range of devices;
-        \item Can be used both in the classroom and remotely;
+        \item Enable collaboration between multiple students as well as with the teacher.
+        \item Are highly interactive and with plenty of quality content.
+        \item Can work with a broad range of devices.
+        \item Can be used both in the classroom and remotely.
         \item Collect data about how the students used the app.
 \end{itemize}
 
@@ -92,8 +92,8 @@ The teachers also expressed interest in having the possibility to create their o
 
 Finally, regarding the usage of \gls{ai} in education, 40 teachers identified the following use cases:
 \begin{itemize}
-        \item Analysis of usage data and usage patterns (63\%) (\textbf{R9});
-        \item Automatic analysis of the difficulty of the questions in a test-type activity (60\%) (\textbf{R10});
+        \item Analysis of usage data and usage patterns (63\%) (\textbf{R9}).
+        \item Automatic analysis of the difficulty of the questions in a test-type activity (60\%) (\textbf{R10}).
         \item Identification of students with difficulties at an early stage (58\%) (\textbf{R11}).
 \end{itemize}
 
@@ -166,7 +166,7 @@ Applications can store data of any kind and then share it with other devices. Th
 
 There are two types of state:
 \begin{itemize}
-    \item Agent state: corresponds to the state of each device (\textit{e.g.}, the position of the device in a common reference frame relative to an AR marker);
+    \item Agent state: corresponds to the state of each device (\textit{e.g.}, the position of the device in a common reference frame relative to an AR marker).
     \item Application state: corresponds to a global state that is shared between the different devices (for example, the number of users currently connected to the application).
 \end{itemize}
 
@@ -184,8 +184,8 @@ The library allows creating services between different devices so that others ca
 
 One of the main features of \ork{} is context maintenance in a multi-device environment. This is useful in multi-user applications, where all applications must have a synchronised context regardless of where they are running. The \ork{} library is in charge of:
 \begin{itemize}
-    \item Communication with the other devices that are also using the library and are connected to the same session;
-    \item Synchronisation of the contexts with the other applications;
+    \item Communication with the other devices that are also using the library and are connected to the same session.
+    \item Synchronisation of the contexts with the other applications.
     \item Storage of the context of the different devices.
 \end{itemize} 
 
@@ -195,7 +195,7 @@ Synchronisation of media content is achieved through the usage of a shared timel
 The service works as follows: a timing object is instantiated on each of the devices and each of these instances is connected to a single shared timeline. If one of the objects pauses, all local components are notified to act accordingly. In addition, if they are connected to the shared timeline by the server, that pause is relayed through the server to all other connected clients.
 This allows synchronisation of different content according to two different types of timers:
 \begin{itemize}
-    \item \textit{Sequencer}: Used to synchronise content that is not media, such as different data that needs to be displayed at the same time. This can be useful in a scene-based timeline, where each scene is associated with a set of data that has to be displayed at the same time;
+    \item \textit{Sequencer}: Used to synchronise content that is not media, such as different data that needs to be displayed at the same time. This can be useful in a scene-based timeline, where each scene is associated with a set of data that has to be displayed at the same time.
     \item \textit{MediaSynch}: Used to synchronise multimedia content such as video or audio. It consists of adjusting the playback speed with high precision, so that the contents are synchronised without time jumps.
 \end{itemize}
 
@@ -203,8 +203,8 @@ This allows synchronisation of different content according to two different type
 
 Finally, \ork{} uses web components as the minimum unit of the user interface. Web components are elements that encapsulate customisable and reusable functionalities avoiding code collisions. They are based on the following principles:
 \begin{itemize}
-    \item \textit{Custom elements}: A set of JavaScript APIs that allow you to define custom elements and their behaviour, which can then be used as desired in the user interface;
-    \item \textit{Shadow DOM}: A set of JavaScript APIs for attaching an encapsulated \textit{shadow} DOM tree to an element - which is rendered separately from the main DOM document - and controlling associated functionality. In this way, features of an element can be kept private, so it can be styled and scripted without fear of collisions with other parts of the document;
+    \item \textit{Custom elements}: A set of JavaScript APIs that allow you to define custom elements and their behaviour, which can then be used as desired in the user interface.
+    \item \textit{Shadow DOM}: A set of JavaScript APIs for attaching an encapsulated \textit{shadow} DOM tree to an element - which is rendered separately from the main DOM document - and controlling associated functionality. In this way, features of an element can be kept private, so it can be styled and scripted without fear of collisions with other parts of the document.
     \item \textit{HTML templates}: The template and slot elements allow you to write markup templates that are not displayed on the rendered page. These can be reused multiple times as the basis for the structure of a custom element.
 \end{itemize}
 
